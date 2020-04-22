@@ -68,7 +68,7 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                <span class="hidden-xs">Admin</span>
+                                <span class="hidden-xs"><?= ucfirst($this->fungsi->user_login()->username) ?></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -76,8 +76,8 @@
                                     <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                     <p>
-                                        Alexander Pierce - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                    <?= $this->fungsi->user_login()->name ?>
+                                        <small><?= $this->fungsi->user_login()->address ?></small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -118,7 +118,7 @@
                         <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Alexander Pierce</p>
+                        <p><?= $this->fungsi->user_login()->name ?></p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
