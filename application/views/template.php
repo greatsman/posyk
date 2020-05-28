@@ -18,7 +18,7 @@
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
         <header class="main-header">
-            <a href="<?= base_url() ?>assets/index2.html" class="logo">
+            <a href="<?= site_url('dashboard') ?>" class="logo">
                 <span class="logo-mini"><b>A</b>LT</span>
                 <span class="logo-lg"><b>Admin</b>LTE</span>
             </a>
@@ -76,7 +76,7 @@
                                     <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                     <p>
-                                    <?= $this->fungsi->user_login()->name ?>
+                                        <?= $this->fungsi->user_login()->name ?>
                                         <small><?= $this->fungsi->user_login()->address ?></small>
                                     </p>
                                 </li>
@@ -101,7 +101,7 @@
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="<?= site_url("auth/logout")?>" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="<?= site_url("auth/logout") ?>" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -174,10 +174,10 @@
                             <li><a href=""><i class="fa fa-circle-o"></i>Stocks</a></li>
                         </ul>
                     </li>
-                    
-                    <?php if($this->session->userdata('level')==1) {?>
-                    <li class="header">Setting</li>
-                    <li><a href="#"><i class="fa fa-user"></i> <span>User</span></a></li>
+
+                    <?php if ($this->session->userdata('level') == 1) { ?>
+                        <li class="header">Setting</li>
+                        <li><a href="<?= site_url('user') ?>"><i class="fa fa-user"></i> <span>User</span></a></li>
                     <?php } ?>
                 </ul>
             </section>
