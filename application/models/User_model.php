@@ -18,9 +18,18 @@ class User_model extends CI_Model
   {
     $this->db->from('user');
     if ($id != null) {
-      $this->db->where('user_id',$id);
+      $this->db->where('user_id', $id);
     }
     $query = $this->db->get();
     return $query;
+  }
+  public function add($post)
+  {
+    $params['username'] = $post['username'];
+    $params['password'] = sha1($post['password']);
+    $params['name'] = $post['name'];
+    $params['address'] = $post['address'] != "" ? $post['address'] : NULL;
+    $params['level'] = $post['level'];
+    $this->db->insert('user', $params);
   }
 }

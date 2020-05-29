@@ -26,36 +26,41 @@
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
                     <form action="" method="post">
-                        <?= validation_errors() ?>
-                        <div class="form-group">
-                            <label for="">Username</label>
+                        <div class="form-group <?= form_error('username') ? 'has-error' : null; ?>">
+                            <label for="">Username </label>
                             <input type="text" name="username" value="<?= set_value('username') ?>" class="form-control">
+                            <?= form_error('username'); ?>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?= form_error('password') ? 'has-error' : null; ?>">
                             <label for="">Password</label>
-                            <input type="password" name="password" class="form-control">
+                            <input type="password" name="password" value="<?= set_value('password') ?>" class="form-control">
+                            <?= form_error('password'); ?>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?= form_error('passwordconf') ? 'has-error' : null; ?>">
                             <label for="">Password Confirmation</label>
-                            <input type="password" name="passwordconf" class="form-control">
+                            <input type="password" name="passwordconf" value="<?= set_value('passwordconf') ?>" class="form-control">
+                            <?= form_error('passwordconf'); ?>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?= form_error('name') ? 'has-error' : null; ?>">
                             <label for="">Nama</label>
                             <input type="text" name="name" value="<?= set_value('name') ?>" class="form-control">
+                            <?= form_error('name'); ?>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?= form_error('address') ? 'has-error' : null; ?>">
                             <label for="">Alamat</label>
                             <textarea name="address" id="" cols="30" rows="10" class="form-control">
-
+                                <?= set_value('address') ?>
                             </textarea>
+                            <?= form_error('address'); ?>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?= form_error('level') ? 'has-error' : null; ?>">
                             <label for="">Level</label>
                             <select name="level" class="form-control">
                                 <option value="">--Pilih--</option>
-                                <option value="1">Admin</option>
-                                <option value="w">Kasir</option>
+                                <option value="1" <?= set_value('level') == 1 ? "selected" : null ?>>Admin</option>
+                                <option value="2" <?= set_value('level') == 2 ? "selected" : null ?>>Kasir</option>
                             </select>
+                            <?= form_error('level'); ?>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-flat">
