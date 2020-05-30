@@ -48,9 +48,12 @@
                                 <a href="<?= site_url('user/edit/' . $row->user_id) ?>" class="btn btn-primary btn-xs">
                                     <i class="fa fa-pencil"></i> Edit
                                 </a>
-                                <a href="<?= site_url('user/delete/' . $row->user_id) ?>" class="btn btn-danger btn-xs">
-                                    <i class="fa fa-pencil"></i> Hapus
-                                </a>
+                                <form action="<?= site_url('user/del') ?>" method="post">
+                                    <button onclick="return confirm('Apakah anda yakin ?')" class="btn btn-danger btn-xs">
+                                        <input type="hidden" name='user_id' value="<?= $row->user_id; ?>">
+                                        <i class="fa fa-trash"></i> Hapus
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     <?php } ?>
