@@ -45,6 +45,9 @@
                             <td><?= $row->address; ?></td>
                             <td><?= $row->description; ?></td>
                             <td>
+                                <a href="<?= site_url('supplier/edit/' . $row->supplier_id) ?>" class="btn btn-primary btn-xs">
+                                    <i class="fa fa-pencil"></i> Edit
+                                </a>
                                 <a href="<?= site_url('supplier/delete/' . $row->supplier_id) ?>" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-danger btn-xs">
                                     <i class="fa fa-trash"></i> Delete
                                 </a>

@@ -103,7 +103,7 @@ class User extends CI_Controller
             $post = $this->input->post(null, TRUE);
             $this->user_model->edit($post);
             if ($this->db->affected_rows() > 0) {
-                echo "<script>alert('Data Berhasil Di perbarui');</script>";
+                echo "<script>alert('Data Berhasil Di Simpan');</script>";
             }
             echo "<script> window.location='" . site_url('user') . "'; </script>";
         }
